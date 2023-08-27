@@ -1,0 +1,30 @@
+#Spring
+spring:
+  main:
+    web-application-type: "none"
+  messages: 
+    basename: "messages"
+    encoding: "UTF-8"
+  items:
+    basename: "items"
+    encoding: "UTF-8"
+
+#Logger
+
+
+#FXML
+fxml:
+  path:
+    root: "/fxml/jp/shirasu/gazo_kanri_kun"
+    main: "main"
+    menu: "menu"
+    dialog: "dialog"
+  file:
+    root: "gazoKanriKun"
+
+#gazoKanriKun
+gazoKanriKun:
+  application:
+    title: "がぞうかんり君"
+    default-width: "1000.0"
+    default-height: "500.0"

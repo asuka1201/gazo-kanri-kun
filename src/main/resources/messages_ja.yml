@@ -1,0 +1,98 @@
+NM001: "{0}の作成に成功しました。"
+EM001: "{0}の生成に失敗しました。"
+EM002: "{0}の作成に失敗しました。"
+---
+---
+#数値
+int1: 2
+int2: 123,456
+
+#浮動小数点
+float1: 0.1
+
+#NULL
+nil1: nil
+nil2: ~
+
+#Boolean
+bool1: true
+bool2: false
+bool3: yes
+bool4: no
+bool5: on
+bool6: off
+
+#日付
+birthday: 1990-01-01
+#タイムスタンプ
+stamp: 2020-12-01 10:00:00 + 0900
+
+#文字列
+str1: hoge
+str2: 'true'
+str3: "333"
+
+#配列
+list:
+  - Ruby
+  - Java
+  - PHP
+
+#ネスト配列
+nest:
+  - parent1
+    - [children1.1, children1.2, children1.3]
+    - [grandchild1.3.1, grandchild1.3.2, grandchild1.3.3]
+  - parent2
+
+#ネストハッシュ
+music:
+  rock: ロック
+  pop: ポップス
+  jaz: ジャズ
+  vocaloid:
+    mikunopop: ミクノポップ
+    miku:
+      hatsune:
+        dark: ダーク
+        soft: ソフト
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+
+key1: value1
+---
+key2: value2 
+---
+#無限ループ
+test1: &test1
+  test11: test11
+  <<: *test1
+
+test2: &test2
+  test21: test21
+  test22: test22
+  <<: *test1
+
+test3: &test3
+  test31: test31
+  test32: test32
+  <<: *test2
+
+---
+?: "key is nil"
+---
+---
+people:
+  - name: tanaka
+    age: 38
+  - name: suzuki
+    age: 26
+  - name : sato
+    age: 58
+test: test
+test: test1

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="746.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="ファイル">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="作業ディレクトリの選択" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" text="開く" />
+                  <MenuItem mnemonicParsing="false" text="最近のものを開く" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="一時保存" />
+                  <MenuItem mnemonicParsing="false" text="保存" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="エクスプローラーを開く" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="終了" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="編集">
+            <items>
+              <MenuItem mnemonicParsing="false" text="ファイル追加" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="選択しているファイルを対象外へ" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="選択しているファイルを削除へ" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="設定">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="設定" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="ヘルプ">
+            <items>
+              <MenuItem mnemonicParsing="false" text="バージョン情報" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox layoutX="14.0" layoutY="32.0" prefHeight="25.0" prefWidth="570.0">
+         <children>
+            <Label prefHeight="37.0" prefWidth="112.0" text="作業ディレクトリ：" />
+            <Label prefHeight="25.0" prefWidth="458.0" style="-fx-border-color: black;" text="選択してください" />
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="73.0" prefHeight="25.0" prefWidth="358.0">
+         <children>
+            <Label prefHeight="28.0" prefWidth="112.0" text="保存ディレクトリ：" />
+            <TextField prefHeight="25.0" prefWidth="230.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="108.0" prefHeight="52.0" prefWidth="358.0">
+         <children>
+            <Label prefHeight="48.0" prefWidth="112.0" text="ファイルグループ：" />
+            <VBox prefHeight="52.0" prefWidth="283.0">
+               <children>
+                  <ChoiceBox prefHeight="25.0" prefWidth="267.0" />
+                  <TextField prefHeight="25.0" prefWidth="229.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <GridPane layoutX="306.0" layoutY="154.0" prefHeight="355.0" prefWidth="433.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.0" minWidth="10.0" prefWidth="201.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="121.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="115.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="116.0" minHeight="4.0" prefHeight="4.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="324.0" minHeight="10.0" prefHeight="324.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="40.0" prefWidth="122.0" text="対象外" GridPane.columnIndex="1" />
+            <Label prefHeight="37.0" prefWidth="145.0" text="削除" GridPane.columnIndex="2" />
+            <ListView prefHeight="356.0" prefWidth="196.0" GridPane.rowIndex="1" />
+            <ListView prefHeight="219.0" prefWidth="132.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ListView prefHeight="226.0" prefWidth="152.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="111.0" text="対象" />
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="プレビュー" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <VBox layoutX="21.0" layoutY="153.0" prefHeight="349.0" prefWidth="267.0">
+         <children>
+            <Label prefHeight="31.0" prefWidth="268.0" text="ファイル追加" />
+            <Pane prefHeight="324.0" prefWidth="275.0" style="-fx-background-color: gray; -fx-border-color: blue;" />
+         </children>
+      </VBox>
+      <Button layoutX="584.0" layoutY="32.0" mnemonicParsing="false" text="選択" />
+      <Button layoutX="400.0" layoutY="101.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="184.0" text="保存" />
+      <Button layoutX="624.0" layoutY="101.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="一時保存" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE logback>
+<configuration>
+	<!-- デフォルト -->
+	<!-- <include resource="org/springframework/boot/logging/logback/base.xml" /> -->
+	<!-- プロパティ -->
+	<property file="src/main/resources/log-params.properties" />
+
+	<!-- コンソール -->
+	<appender name="CONSOLE"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<target>System.out</target>
+		<encoder>
+			<charset>${logCharset}</charset>
+			<pattern>${logFormat}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- ファイル出力 -->
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logDirectoryPath}${logFileNmae}</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logHistoryDirectoryPath}${logHistoryFileName}</fileNamePattern>
+			<maxHistory>${logMaxHistory}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<charset>${logCharset}</charset>
+			<pattern>${logFormat}</pattern>
+		</encoder>
+	</appender>
+	<appender name="ERR_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logDirectoryPath}${logErrFileName}</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logHistoryDirectoryPath}${logHistoryErrFileName}</fileNamePattern>
+			<maxHistory>${logMaxHistory}</maxHistory>
+			<maxFileSize>${logMaxFileSize}</maxFileSize>
+			<totalSizeCap>${logTotalSizeCap}</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<charset>${logCharset}</charset>
+			<pattern>${logFormat}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- ロガー -->
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</root>
+	<logger name="jp.shirasu.gazo_kanri_kun" level="ERROR"
+		additivity="false">
+		<appender-ref ref="ERR_FILE" />
+	</logger>
+</configuration>

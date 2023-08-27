@@ -26,6 +26,7 @@ public class GazoKanriKunStageInitializer implements ApplicationListener<GazoKan
 	private final MessageSource messageSource;
 	private final MessageSource itemSource;
 
+	@Override
 	public void onApplicationEvent(GazoKanriKunStageReadyEvent event) {
 
 		// TODO メッセージ表示確認 後で消す。

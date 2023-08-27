@@ -17,7 +17,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="746.0"
+ xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jp.shirasu.gazo_kanri_kun.controller.GazoKanriKunController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="746.0">
         <menus>
@@ -111,7 +112,7 @@
          </children>
       </VBox>
       <Button layoutX="584.0" layoutY="32.0" mnemonicParsing="false" text="選択" />
-      <Button layoutX="400.0" layoutY="101.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="184.0" text="保存" />
+      <Button layoutX="400.0" layoutY="101.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="184.0" fx:id="saveImageFiles" text="保存" />
       <Button layoutX="624.0" layoutY="101.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="一時保存" />
    </children>
 </AnchorPane>

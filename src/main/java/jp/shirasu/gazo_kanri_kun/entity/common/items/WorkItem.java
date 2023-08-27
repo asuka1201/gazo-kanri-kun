@@ -24,7 +24,6 @@ public class WorkItem implements Serializable {
 	private String saveDirectory;
 	/** ファイルグループ */
 	private String fileGroup;
-	
 	/** 元ファイル名保持フラグ */
 	private Boolean retentionOriginalFileNameFlg;
 }
